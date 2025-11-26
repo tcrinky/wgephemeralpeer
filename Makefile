@@ -75,6 +75,10 @@ release-darwin-amd64:
 release-darwin-arm64:
 	$(MAKE) GOOS=darwin GOARCH=arm64 build
 
+.PHONY: release-freebsd-amd64
+release-freebsd-amd64:
+	$(MAKE) CGO_ENABLED=1 GOOS=freebsd GOARCH=amd64 build
+
 .PHONY: release-linux-amd64
 release-linux-amd64:
 	$(MAKE) GOOS=linux GOARCH=amd64 build
